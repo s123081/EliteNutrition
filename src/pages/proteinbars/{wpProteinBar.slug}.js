@@ -1,11 +1,20 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
 import Layout from '../../components/layout'
 
-const ArtistPage = ({data: {wpProteinBar: {proteinBarMeta: proteinbar}}}) => {
+// ...
+
+const ArtistPage = ({
+  data: {
+    wpProteinBar: {proteinBarMeta: proteinbar},
+  },
+ }) => {
+  const image = getImage(proteinbar.image.localFile)
   return (
     <Layout pageTitle="Artiesten Template">
     <div>
+      <GatsbyImage image={image} alt={proteinbar.image.altText}/>
       <h3>{proteinbar.name}</h3>
       <h1>{proteinbar.name}</h1>
       <div dangerouslySetInnerHTML={{__html: proteinbar.description}} />
@@ -27,14 +36,23 @@ query ($id: String) {
       name
       weight
       flavour
-      gramsOfProtein
       calories
+      gramsOfProtein
       ingredients
       allergy
       description
+      image {
+        localFile{
+				childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+        altText
+      }
     }
   }
 }
+
 
 `
 
