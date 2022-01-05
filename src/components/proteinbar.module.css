@@ -15,7 +15,7 @@
     height: 100%;
   }
   
-  .artist-info {
+  .proteinbar-info {
     display: block;
     position: absolute;
     bottom: -50px;
@@ -29,18 +29,16 @@
     transition: all 0.5s ease;
   }
   
-  .wrapper:hover .artist-info {
-    bottom: 0;
+  .wrapper:hover .proteinbar-info {
+    top: 0;
+    text-align: center;
+    margin-top: 2rem;
     opacity: 1;
+    text-decoration: black;
   }
   
-  .artist-name {
+  .proteinbar-name {
     margin: 0;
-    color: #37ba83;
+    color: #3739ba;
   }
   
-  .full-name {
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0;
-  }

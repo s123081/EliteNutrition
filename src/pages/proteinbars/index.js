@@ -4,10 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Proteinbar from "../../components/proteinbar"
 import {
-  hero,
   section,
   subtitle,
-  artists,
+  featuredBars,
   description,
 } from "../../page.module.css"
 
@@ -18,14 +17,9 @@ const ProteinBarsPage = ({
     wpPage: { proteinBarsPage },
   },
 }) => {
-  const image = getImage(proteinBarsPage.headerProteinbars.picture.localFile)
   return (
-    <Layout pageTitle="Protein bars of Elite Agency">
-      <GatsbyImage
-      className={hero}
-        image={image}
-        alt={proteinBarsPage.headerProteinbars.picture.altText}
-      />
+    <Layout pageTitle="Protein bars of EliteNutrition">
+      
       <div className={section}>
         <h2 className={subtitle}>{proteinBarsPage.headerProteinbars.title}</h2>
         <div
@@ -34,7 +28,7 @@ const ProteinBarsPage = ({
             __html: proteinBarsPage.headerProteinbars.description,
           }}
         />
-        <div className={artists}>
+        <div className={featuredBars}>
           {proteinbarsInfo.map(({ node: proteinbar }) => (
             <Proteinbar key={proteinbar.id} slug={proteinbar.slug} proteinbar={proteinbar} />
           ))}
@@ -86,48 +80,4 @@ allWpProteinBar {
 
 `
 
-/*
-query MyQuery {
-  wpPage(slug: {eq: "proteinbars"}) {
-    proteinBarsPage {
-      headerProteinbars {
-        description
-        title
-        picture {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(quality: 100, placeholder: BLURRED, layout: FULL_WIDTH)
-            }
-          }
-          altText
-        }
-      }
-    }
-  }
-}
-*/
-
-/*
-query MyQuery {
-  allWpProteinBar {
-    edges {
-      node {
-        proteinBarMeta {
-          name
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: true})
-              }
-            }
-            altText
-          }
-        }
-        slug
-        id
-      }
-    }
-  }
-}
-*/
 export default ProteinBarsPage

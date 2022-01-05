@@ -8,55 +8,39 @@ import {
   headerInfo,
   headerPicture,
   headerTitle,
-  CTA,
   section,
   subtitle,
-  artists,
+  featuredBars,
 } from "../page.module.css"
 
-const IndexPage = ({
-  data: {
-    wpPage: {eliteNutritionPage},
-  },
-}) => {
+const IndexPage = ({data: {wpPage: {eliteNutritionPage}}}) => {
   const image = getImage(eliteNutritionPage.headerHome.picture.localFile)  
   return (
     <Layout>
-      <div className={header}>
+    <div className={header}>
       <div className={headerInfo}>
-          <h1 className={headerTitle}>{eliteNutritionPage.headerHome.title}</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: eliteNutritionPage.headerHome.description,
-            }}
-          />
-          
-        </div>
+        <h1 className={headerTitle}>{eliteNutritionPage.headerHome.title}</h1>
+        <div dangerouslySetInnerHTML={{__html: eliteNutritionPage.headerHome.description}}/>
+      </div>
         <div>
-          <GatsbyImage
-            image={image}
-            className={headerPicture}
-            alt={eliteNutritionPage.headerHome.picture.altText}
-          />
+          <GatsbyImage image={image} className={headerPicture} alt={eliteNutritionPage.headerHome.picture.altText}/>
         </div>
       </div>
 
       <div className={section}>
-    <h2 className={subtitle}>{eliteNutritionPage.featuredProducts.title}</h2>
-    <p>{eliteNutritionPage.featuredProducts.description}</p>
-    <div className={artists}>
-      {eliteNutritionPage.featuredProducts.proteinBars.map(proteinbar => (
-            <Proteinbar slug={`proteinbars/${proteinbar.slug}`} key={proteinbar.id} proteinbar={proteinbar} />
-          ))}
+    <h2 className={subtitle}> {eliteNutritionPage.featuredProducts.title}</h2>
+    <p> {eliteNutritionPage.featuredProducts.description}</p>
+    <div className={featuredBars}> {eliteNutritionPage.featuredProducts.proteinBars.map(proteinbar => (
+      <Proteinbar slug={`proteinbars/${proteinbar.slug}`} key={proteinbar.id} proteinbar={proteinbar} />))}
     </div>
   </div>
-    </Layout>
+  </Layout>
   )
 }
 
 
 export const query = graphql`
-query MyQuery {
+query {
   wpPage(slug: {eq: "home"}) {
     eliteNutritionPage {
       headerHome {
@@ -100,6 +84,5 @@ query MyQuery {
   }
 }
 `
-
 
 export default IndexPage

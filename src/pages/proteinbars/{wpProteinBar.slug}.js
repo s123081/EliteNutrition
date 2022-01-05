@@ -6,18 +6,18 @@ import {
   header,
   headerInfo,
   headerPicture,
-  artistName,
-  fullName,
-  artistRoles,
-  artistDescription,
-  artistInfo,
-  artistPictures,
-  artistPicture,
+  proteinbarName,
+  dietsName,
+  proteinbarDescription,
+  barInfo,
+  barPictures,
+  barPicture,
 } from "../../page.module.css"
+import Proteinbar from "../../components/proteinbar"
 
 
 
-const ArtistPage = ({
+const ProteinbarPage = ({
   data: {
     wpProteinBar: {
       proteinBarMeta: proteinbar,
@@ -34,8 +34,8 @@ const ArtistPage = ({
     <Layout pageTitle="Artiesten Template">
     <div className={header}>
         <div className={headerInfo}>
-          {proteinbar.name && <h3 className={artistName}>{proteinbar.name}</h3>}
-          <div className={artistRoles}>
+          {proteinbar.name && <h3 className={proteinbarName}>{proteinbar.name}</h3>}
+          <div className={dietsName}>
             {diets.map((diet, i) => (
               <span key={i}>
                 {diet.name} {i + 1 < diets.length && "- "}
@@ -43,21 +43,21 @@ const ArtistPage = ({
             ))}
           </div>
           
-          <div className={artistDescription} dangerouslySetInnerHTML={{__html: proteinbar.description}} />
-      <p><span className={artistInfo}>Weight: </span>{proteinbar.weight} </p>
-      <p><span className={artistInfo}>Flavour: </span>{proteinbar.flavour}</p>
-      <p><span className={artistInfo}>Grams Of Protein: </span>{proteinbar.gramsOfProtein}</p>
-      <p><span className={artistInfo}>Calories: </span>{proteinbar.calories}</p>
-      <p><span className={artistInfo}>Allergy: </span>{proteinbar.allergy}</p>
-      <p><span className={artistInfo}>Ingredients: </span>{proteinbar.ingredients}</p>
+          <div className={proteinbarDescription} dangerouslySetInnerHTML={{__html: proteinbar.description}} />
+      <p><span className={barInfo}>Weight: </span>{proteinbar.weight} </p>
+      <p><span className={barInfo}>Flavour: </span>{proteinbar.flavour}</p>
+      <p><span className={barInfo}>Grams Of Protein: </span>{proteinbar.gramsOfProtein}</p>
+      <p><span className={barInfo}>Calories: </span>{proteinbar.calories}</p>
+      <p><span className={barInfo}>Allergy: </span>{proteinbar.allergy}</p>
+      <p><span className={barInfo}>Ingredients: </span>{proteinbar.ingredients}</p>
 
     </div>
         <GatsbyImage className={headerPicture} image={image} alt={proteinbar.image.altText} />
       </div>
-      <div className={artistPictures}>
-        <GatsbyImage className={artistPicture} image={picture1} alt={proteinbar .pictures.picture1.altText} />
-        <GatsbyImage className={artistPicture} image={picture2} alt={proteinbar.pictures.picture2.altText} />
-        <GatsbyImage className={artistPicture} image={picture3} alt={proteinbar.pictures.picture3.altText} />
+      <div className={barPictures}>
+        <GatsbyImage className={barPicture} image={picture1} alt={proteinbar .pictures.picture1.altText} />
+        <GatsbyImage className={barPicture} image={picture2} alt={proteinbar.pictures.picture2.altText} />
+        <GatsbyImage className={barPicture} image={picture3} alt={proteinbar.pictures.picture3.altText} />
       </div>
     </Layout>
   )
@@ -119,4 +119,4 @@ query ($id: String) {
 }
 `
 
-export default ArtistPage
+export default ProteinbarPage

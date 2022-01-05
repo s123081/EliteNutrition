@@ -1,53 +1,52 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
-  }
-  
-  .header-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    max-width: 500px;
-    margin-right: 30px;
-  }
-  .header-picture {
-    border-radius: 50%;
-    width: 40vw;
-    height: 40vw;
-    max-width: 500px;
-    max-height: 500px;
-  }
-  
-  .header-title {
-    font-size: 6rem;
-    line-height: 5rem;
-    letter-spacing: -0.2rem;
-    text-transform: uppercase;
-    margin: 0;
-    margin-bottom: 30px;
-  }
-  
-  .CTA {
-    display: block;
-    background-color: #37ba83;
-    color: white;
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin-right: auto;
-    margin-top: 20px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-  
-  .CTA:hover {
-    color: #37ba83;
-    background-color: #000;
-    border: 1px solid #37ba83;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  max-width: 500px;
+  margin-right: 30px;
+  color: black;
+}
+.header-picture {
+  border-radius: 10%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+}
+.header-title {
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: -0.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 30px;
+  color: black;
+}
 
+.CTA {
+  display: block;
+  background-color: #3739ba;;
+  color: white;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: auto;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.CTA:hover {
+  color: #3739ba;
+  background-color: #000;
+  border: 1px solid #3739ba;
+}
 
 .subtitle {
   font-size: 4rem;
@@ -56,6 +55,7 @@
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 30px;
+  color: black;
 }
 
 .section {
@@ -75,19 +75,8 @@
   z-index: -1;
 }
 
-.section::before {
-  top: 40%;
-  left: -40%;
-  background-image: url("./images/blob-1.svg");
-}
 
-.section::after {
-  top: 0;
-  right: -40%;
-  background-image: url("./images/blob-2.svg");
-}
-
-.artists {
+.featuredBars {
   display: flex;
   justify-content: space-between;
   margin-top: 90px;
@@ -95,17 +84,11 @@
 }
 
 
-.hero {
-  width: 120vw;
-  height: 500px;
-  transform: translateX(calc((-120vw + 1080px) / 2));
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-}
 
 .description {
   max-width: 600px;
   margin: auto;
+  color: black;
 }
 
 @media screen and (max-width: 1200px) {
@@ -114,14 +97,14 @@
   }
 }
 
-.artist-name {
+.proteinbar-name {
   font-size: 1.75rem;
   text-transform: uppercase;
-  color: #37ba83;
+  color: #3739ba;
   margin: 0;
 }
 
-.artist-roles {
+.diets-name{
   font-size: 1.3rem;
   text-transform: uppercase;
   margin: 0.5rem 0 1rem 0;
@@ -133,24 +116,23 @@
   margin: 1rem 0 1.5rem 0;
 }
 
-.artist-description {
+.proteinbar-description {
   margin-bottom: 2rem;
 }
 
-.artist-info {
+.bar-info {
   font-weight: 700;
   text-transform: uppercase;
-  color: #37ba83;
-}
-.artist-pictures {
+  color: #3739ba;}
+.bar-pictures {
   position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 120px;
 }
 
-.artist-pictures::before,
-.artist-pictures::after {
+.bar-pictures::before,
+.bar-pictures::after {
   position: absolute;
   display: inline-flex;
   content: "";
@@ -160,32 +142,14 @@
   transform: rotate(90);
 }
 
-.artist-pictures::before {
-  top: -10%;
-  left: 0%;
-  background-size: 450px 450px;
-  height: 450px;
-  width: 450px;
-  background-image: url("./images/blob-1.svg");
-}
 
-.artist-pictures::after {
-  bottom: -10%;
-  right: 0%;
-  background-size: 350px 350px;
-  height: 350px;
-  width: 350px;
-  background-image: url("./images/blob-2.svg");
-}
+.bar-picture {
 
-.artist-picture {
-  border-radius: 50%;
   width: 28vw;
   height: 50vw;
   max-width: 350px;
   max-height: 500px;
 }
-
 
 .mission-section {
   display: flex;
@@ -202,7 +166,6 @@
   margin-left: 30px;
 }
 
-
 .company-info {
   margin-top: 60px;
 }
@@ -213,9 +176,7 @@
   margin-bottom: 1rem;
 }
 
-.link {
-  color: #37ba83;
-}
+
 
 .socials {
   display: flex;

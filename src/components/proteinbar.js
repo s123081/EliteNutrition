@@ -4,9 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   wrapper,
   image,
-  artistInfo,
-  artistName,
-  fullName,
+  proteinbarInfo,
+  proteinbarName,
 } from "./proteinbar.module.css"
 
 
@@ -21,9 +20,9 @@ export const Proteinbar = ({ proteinbar, slug }) => {
         image={profile}
         alt={proteinbar.proteinBarMeta.image.altText}
       />
-      <div className={artistInfo}>
+      <div className={proteinbarInfo}>
         {proteinbar.proteinBarMeta.name && <p>{proteinbar.proteinBarMeta.name}</p>}
-        <p className={artistName}>
+        <p className={proteinbarName}>
           {proteinbar.proteinBarMeta.name}
         </p>
       </div>

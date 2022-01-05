@@ -1,5 +1,7 @@
+
 p {
     margin: 0;
+    color: black;
   }
   
   .wrapper {
@@ -8,6 +10,7 @@ p {
     margin-top: 120px;
     padding: 2rem 0;
     color: #e0e0e0;
+    background-color: rgb(180, 180, 180);
   }
   
   .wrapper > div:first-child {
@@ -29,23 +32,14 @@ p {
     font-weight: 600;
     color: white;
     margin-right: auto;
-  }
-  
-  .title::after {
-    content: ".";
-    position: absolute;
-    right: -5px;
-    bottom: 3px;
-    font-size: 1.8rem;
-    font-family: serif;
-    color: #37ba83;
-    margin-right: auto;
+    color: #3739ba;
   }
   
   .socials {
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
+    color: black;
   }
   
   .instagram,
@@ -55,6 +49,8 @@ p {
     width: 30px;
     margin-left: 1rem;
     transition: transform 0.3 ease;
+    background-color: black;
+    border-radius: 60%;
   }
   
   .instagram:hover,
