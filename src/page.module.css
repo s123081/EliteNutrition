@@ -1,3 +1,6 @@
+body{
+  background-color: rgb(75, 75, 75);
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +34,7 @@
 
 .CTA {
   display: block;
-  background-color: #3739ba;;
+  background-color: white;
   color: white;
   border: 1px solid #000;
   border-radius: 4px;
@@ -43,9 +46,9 @@
 }
 
 .CTA:hover {
-  color: #3739ba;
+  color: white;
   background-color: #000;
-  border: 1px solid #3739ba;
+  border: 1px solid white;
 }
 
 .subtitle {
@@ -75,6 +78,18 @@
   z-index: -1;
 }
 
+.section::before {
+  top: 40%;
+  left: -40%;
+  background-image: url("./images/blob-1.svg");
+}
+
+.section::after {
+  top: 0;
+  right: -40%;
+  background-image: url("./images/blob-2.svg");
+}
+
 
 .featuredBars {
   display: flex;
@@ -98,9 +113,9 @@
 }
 
 .proteinbar-name {
-  font-size: 1.75rem;
+  font-size: 2rem;
   text-transform: uppercase;
-  color: #3739ba;
+  color: #005fb8;
   margin: 0;
 }
 
@@ -123,7 +138,7 @@
 .bar-info {
   font-weight: 700;
   text-transform: uppercase;
-  color: #3739ba;}
+  color: white;}
 .bar-pictures {
   position: relative;
   display: flex;

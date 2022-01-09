@@ -74,7 +74,6 @@ query ($id: String) {
       weight
       ingredients
       allergy
-      description
       image {
         localFile {
           childImageSharp {
